@@ -1,9 +1,15 @@
-import random
 import re
+from random import randint
+from string import ascii_letters, digits
+from secrets import choice
 
+
+def generate_invite_code():
+    alphabet = ascii_letters + digits
+    return ''.join(choice(alphabet) for _ in range(6))
 
 def generate_auth_code():
-    return random.randint(1000, 9999)
+    return randint(1000, 9999)
 
 
 phone_pattern = (
